@@ -1,17 +1,14 @@
-
-import './App.css'
+import "./App.css";
 import { Navigate, Route, Routes } from "react-router-dom";
 import AccountPage from "./pages/AccountPage";
 import CommunityPage from "./pages/CommunityPage";
 import HomePage from "./pages/HomePage";
 import StatisticsPage from "./pages/StatisticsPage";
 
-
-
 function App() {
   return (
     <>
-       <main>
+      <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/account" element={<AccountPage />} />
@@ -21,7 +18,7 @@ function App() {
         </Routes>
       </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
