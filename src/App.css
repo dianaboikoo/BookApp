@@ -89,6 +89,7 @@
   background: none;
   outline: none;
   padding-left: 8px;
+  color: black; /* Sets the text color to black */
 }
 
 .search-icon {
