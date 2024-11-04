@@ -121,10 +121,9 @@
   color: white;
 }
 
-/* Chat Item */
 .chat-item {
   display: flex;
-  align-items: center;
+  align-items: center; /* Ensures all items are vertically centered */
   padding: 12px 0;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -136,13 +135,26 @@
   margin-right: 12px;
 }
 
+.chat-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Aligns items to the start of the container */
+}
+
 .chat-name {
   font-weight: bold;
-  color: #000; /* Darker color for names */
+  color: #000;
+  margin-bottom: 4px;
+  text-align: left; /* Ensure left alignment */
 }
 
 .chat-message {
-  color: #555; /* Slightly darker gray for message text */
+  color: #555;
+  font-size: 14px; /* Adjust font size if needed for better alignment */
+}
+.chat-time {
+  color: #888; /* Set to a grey color */
+  font-size: 12px; /* Adjust font size if necessary */
 }
 
 .unread-dot {
