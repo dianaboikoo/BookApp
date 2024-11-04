@@ -7,12 +7,12 @@ import BottomNav from "../components/BottomNav";
 
 function CommunityPage() {
   const [activeTab, setActiveTab] = useState("Community");
-  // Mock chat data
-  const chats = [
+  // Mock data for both Community and Chat tabs
+  const communityChats = [
     {
       id: 1,
       name: "Aarhus Book Swap",
-      message: "Eva: I would love to!",
+      message: "Eva: I would love to! 😊",
       time: "8:36 pm",
       image: "path/to/image1.jpg",
       unread: true,
@@ -50,6 +50,44 @@ function CommunityPage() {
       unread: false,
     },
   ];
+
+  const chatChats = [
+    {
+      id: 1,
+      name: "Luisa Harmsen",
+      message: "Luisa: I would love to! 😊",
+      time: "8:36 pm",
+      image: "path/to/image6.jpg",
+      unread: true,
+    },
+    {
+      id: 2,
+      name: "Matilda Jensen",
+      message: "You: What is going on with hobbit lol",
+      time: "8:36 pm",
+      image: "path/to/image7.jpg",
+      unread: false,
+    },
+    {
+      id: 3,
+      name: "Magnus Emil",
+      message: "You: What is going on with hobbit lol",
+      time: "8:36 pm",
+      image: "path/to/image8.jpg",
+      unread: false,
+    },
+    {
+      id: 4,
+      name: "friends",
+      message: "You: What do you think of last chap...",
+      time: "8:36 pm",
+      image: "path/to/image9.jpg",
+      unread: false,
+    },
+  ];
+
+  // Select data based on the active tab
+  const chats = activeTab === "Community" ? communityChats : chatChats;
 
   return (
     <div className="community-page">
