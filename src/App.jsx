@@ -4,6 +4,8 @@ import AccountPage from "./pages/AccountPage";
 import CommunityPage from "./pages/CommunityPage";
 import HomePage from "./pages/HomePage";
 import StatisticsPage from "./pages/StatisticsPage";
+import TimerPage from "./pages/TimerPage";
+import NotePage from "./pages/NotePage";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
           <Route path="/account" element={<AccountPage />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/statistics" element={<StatisticsPage />} />
+          <Route path="/timer" element={<TimerPage />} />
+          <Route path="/note" element={<NotePage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>
