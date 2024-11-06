@@ -2,6 +2,11 @@ import React, { useState } from "react";
 
 function SearchPage() {
   const [activeTab, setActiveTab] = useState("Genres");
+  const [isMoodOpen, setIsMoodOpen] = useState(false);
+  const [isCharacterOpen, setIsCharacterOpen] = useState(false);
+
+  const toggleMood = () => setIsMoodOpen((prev) => !prev);
+  const toggleCharacter = () => setIsCharacterOpen((prev) => !prev);
 
   const genres = [
     "Romance",
@@ -10,10 +15,6 @@ function SearchPage() {
     "Fantasy",
     "Drama",
     "Classics",
-  ];
-  const filters = [
-    { title: "Books by Mood & Emotions" },
-    { title: "Books by Character & Plot" },
   ];
 
   return (
@@ -40,7 +41,7 @@ function SearchPage() {
         </button>
       </div>
 
-      {/* Content for Genres or Filters based on active tab */}
+      {/* Content based on active tab */}
       {activeTab === "Genres" ? (
         <div className="genres-grid">
           {genres.map((genre) => (
@@ -53,16 +54,44 @@ function SearchPage() {
         </div>
       ) : (
         <div className="filters-list">
-          {filters.map((filter, index) => (
-            <div key={index} className="filter-item">
-              <span>{filter.title}</span>
-              <span className="dropdown-icon">▼</span>
+          {/* Mood & Emotions Section */}
+          <div className="filter-item" onClick={toggleMood}>
+            <div className="filter-header">
+              <span>
+                Books by <strong>Mood & Emotions</strong>
+              </span>
+              <span className="dropdown-icon">{isMoodOpen ? "▲" : "▼"}</span>
             </div>
-          ))}
+            {isMoodOpen && (
+              <div className="filter-content">
+                <div className="filter-subitem">Emotional Tone</div>
+                <div className="filter-subitem">Content Intensity</div>
+                <div className="filter-subitem">Predictability & Style</div>
+              </div>
+            )}
+          </div>
+
+          {/* Character & Plot Section */}
+          <div className="filter-item" onClick={toggleCharacter}>
+            <div className="filter-header">
+              <span>
+                Books by <strong>Character & Plot</strong>
+              </span>
+              <span className="dropdown-icon">
+                {isCharacterOpen ? "▲" : "▼"}
+              </span>
+            </div>
+            {isCharacterOpen && (
+              <div className="filter-content">
+                <div className="filter-subitem">Character Complexity</div>
+                <div className="filter-subitem">Plot Structure</div>
+              </div>
+            )}
+          </div>
         </div>
       )}
 
-      {/* Bottom Navigation Placeholder */}
+      {/* Bottom Navigation */}
       <footer className="bottom-nav">
         <button className="nav-icon">🏠</button>
         <button className="nav-icon">💬</button>
