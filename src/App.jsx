@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import StatisticsPage from "./pages/StatisticsPage";
 import TimerPage from "./pages/TimerPage";
 import NotePage from "./pages/NotePage";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/statistics" element={<StatisticsPage />} />
           <Route path="/timer" element={<TimerPage />} />
           <Route path="/note" element={<NotePage />} />
+          <Route path="/search" element={<SearchPage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>
