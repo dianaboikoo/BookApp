@@ -6,7 +6,6 @@ function TimerPage() {
   const [seconds, setSeconds] = useState(0);
   const navigate = useNavigate();
 
-  // Timer logic
   useEffect(() => {
     let interval;
     if (isRunning) {
@@ -19,7 +18,6 @@ function TimerPage() {
     return () => clearInterval(interval);
   }, [isRunning, seconds]);
 
-  // Format seconds as MM:SS
   const formatTime = (seconds) => {
     const minutes = String(Math.floor(seconds / 60)).padStart(2, "0");
     const secs = String(seconds % 60).padStart(2, "0");
@@ -36,11 +34,7 @@ function TimerPage() {
       </header>
 
       <div className="book-cover">
-        <img
-          src="path/to/the-goldfinch.jpg"
-          alt="The Goldfinch"
-          className="book-image"
-        />
+        <img src="path/to/the-goldfinch.jpg" alt="The Goldfinch" />
       </div>
 
       <button className="timer-button">Set a timer</button>
@@ -51,16 +45,18 @@ function TimerPage() {
 
       <div className="controls">
         <button className="control-button" onClick={() => navigate("/note")}>
-          📝 Book Chat
+          📝
+          <span>Book Chat</span>
         </button>
         <button
           className="control-button"
           onClick={() => setIsRunning(!isRunning)}
         >
-          {isRunning ? "⏸️ Pause" : "▶️ Play"}
+          {isRunning ? "⏸️" : "▶️"}
+          <span>{isRunning ? "Pause" : "Play"}</span>
         </button>
         <button className="control-button" onClick={() => navigate("/note")}>
-          ➕ Add Note
+          ➕<span>Add Note</span>
         </button>
       </div>
     </div>
